@@ -59,4 +59,22 @@ function inizioGioco() {
             box.addEventListener('click', selectedSquareChangeColor);
         }
     }
+
+    //Costante per generare il numero random dove è presente la bomba
+const arrRandomBombs = [];
+//Ciclo per generare numeri random
+for (i = 0; i < bombNum; i++) {
+    let randomNum;
+
+    do{
+        randomNum = getRandomNum(1, totBox);
+    }
+    while(arrRandomBombs.includes(randomNum)){
+    arrRandomBombs.push(randomNum)
+
+    }
+}
+console.log(arrRandomBombs.sort()) 
+
+
 }

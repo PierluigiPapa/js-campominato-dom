@@ -110,10 +110,23 @@ main {
     justify-content: center;
 }
 
+.box-easy:hover,
+.box-medium:hover,
+.box-hard:hover {
+    background-color: #cbffee;
+    color: black;
+}
+
 .box-selected-color{
     background-color: #165198;
     border: 1px solid black;
     color: white;
+}
+
+.box-selected-color-bomb{
+    background-color: #F25459;
+    border: 1px solid black;
+    color: black;
 }
 
 /* // SECTION MAIN */

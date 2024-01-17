@@ -76,5 +76,39 @@ for (i = 0; i < bombNum; i++) {
 }
 console.log(arrRandomBombs.sort()) 
 
+ //Costante per stabilire il numero con o senza bomba
+ const goodSquares = totBox - bombNum; 
+ // console.log('le buone sono ' + goodSquares)
 
+ //Funzione per selezionare il numero nella griglia
+ function selectedSquareChangeColor(element) {    
+     boxValue = parseInt(this.innerHTML);
+     console.log('valore square', boxValue);
+     const box = document.querySelectorAll('box');
+         
+         if (arrRandomBombs.includes(boxValue)){ 
+             this.classList.add('box-selected-color-bomb'); 
+             console.log('hai perso, hai preso una bomba!')
+             for(i = 0; i < box.length; i++){
+                 box[i].removeEventListener('click', selectedSquareChangeColor);
+             }
+ 
+             message.innerHTML = 'Hai preso una bomba! Hai totalizzato ' + score + ' punti' 
+         }else{
+             this.classList.add('box-selected-color'); 
+             score++ 
+         }
+
+         if (score == goodSquares){ 
+             message.innerHTML = 'Hai vinto! Hai totalizzato ' + score + ' punti' ;
+
+
+             for(i = 0; i < box.length; i++){
+                 squares[i].removeEventListener('click', selectedSquareChangeColor);
+             }
+         }
+     
+
+     this.removeEventListener('click', selectedSquareChangeColor); 
+ }
 }

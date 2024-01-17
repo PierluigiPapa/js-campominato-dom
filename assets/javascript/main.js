@@ -112,3 +112,8 @@ console.log(arrRandomBombs.sort())
      this.removeEventListener('click', selectedSquareChangeColor); 
  }
 }
+
+//Funzione per generare il numero random
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

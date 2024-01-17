@@ -14,44 +14,48 @@ const bombNum = 16;
 //Creo un metodo per cliccare sul pulsante play per iniziare il gioco 
 buttonHmtl.addEventListener('click', inizioGioco);
 
-//Funzione per selezionare il numero
-function selectedSquareChangeColor(){
-    this.classList.add('box-selected-color');
-
-    console.log(this.innerHTML)
-}
 //Funzione per avviare il gioco
 function inizioGioco() {
+    message.innerHTML = '';
+    //Variabile per definire il punteggio iniziale
+    let score = 0;
     
     grigliaHtml.innerHTML = '';
-    //SE clicco su easy, uscirà la griglia da 100 
+    //SE clicco su easy, uscirà una griglia da 100
     if(level.value == 'easy') {
         for (let i = 1; i <= 100; i++) {
             let box = document.createElement("div");
             box.classList.add("box-easy");
+            box.classList.add("box");
             grigliaHtml.append(box);
             box.innerHTML = i;
 
+            totBox = 100;
             box.addEventListener('click', selectedSquareChangeColor);
         }
-    //SE clicco su medium, uscirà la griglia da 81
+    //ALTRIMENTI clicco su medium, per uscire una griglia da 81
     }else if (level.value == 'medium') {
         for (let i = 1; i <= 81; i++) {
             let box = document.createElement("div");
             box.classList.add("box-medium");
+            box.classList.add("box");
+            
             grigliaHtml.append(box);
             box.innerHTML = i;
 
+            totBox= 81;
             box.addEventListener('click', selectedSquareChangeColor);
         }
-    //Se clicco su hard, uscirà la griglia da 49
+    //ALTRIMENTI clicco su hard, per uscire una griglia da 49
     }else if (level.value == 'hard') {
         for (let i = 1; i <= 49; i++) {
             let box = document.createElement("div");
             box.classList.add("box-hard");
+            box.classList.add("box");
             grigliaHtml.append(box);
             box.innerHTML = i;
 
+            totBox= 49;
             box.addEventListener('click', selectedSquareChangeColor);
         }
     }

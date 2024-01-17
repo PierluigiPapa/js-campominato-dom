@@ -4,6 +4,13 @@ const levelHtml = document.getElementById ('level')
 const buttonHmtl = document.querySelector ('.play')
 //Costante per attivare la griglia
 const grigliaHtml = document.getElementById('grid')
+
+//Costante per generare il punteggio, tramite un messaggio, quando si clicca sulla bomba
+const message = document.querySelector('.message')
+//Costante per stabilire il numero delle bombe nel gioco
+const bombNum = 16;
+
+
 //Creo un metodo per cliccare sul pulsante play per iniziare il gioco 
 buttonHmtl.addEventListener('click', inizioGioco);
 

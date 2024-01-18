@@ -94,6 +94,7 @@ console.log(arrRandomBombs.sort())
              }
  
              message.innerHTML = 'Hai preso una bomba! Hai totalizzato ' + score + ' punti' 
+             grigliaHtml.style.setProperty ("pointer-events", "none")
          }else{
              this.classList.add('box-selected-color'); 
              score++ 
@@ -104,7 +105,7 @@ console.log(arrRandomBombs.sort())
 
 
              for(i = 0; i < box.length; i++){
-                 squares[i].removeEventListener('click', selectedSquareChangeColor);
+                 box[i].removeEventListener('click', selectedSquareChangeColor);
              }
          }
      

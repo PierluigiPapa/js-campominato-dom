@@ -60,7 +60,7 @@ function inizioGioco() {
         }
     }
 
-    //Costante per generare il numero random dove è presente la bomba
+//Costante per generare il numero random dove è presente la bomba
 const arrRandomBombs = [];
 //Ciclo per generare numeri random
 for (i = 0; i < bombNum; i++) {
@@ -109,7 +109,6 @@ console.log(arrRandomBombs.sort())
              }
          }
      
-
      this.removeEventListener('click', selectedSquareChangeColor); 
  }
 }
